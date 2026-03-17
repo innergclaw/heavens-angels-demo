@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heavens Angels Childcare | STAR 4 Early Learning Center | Philadelphia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --sky-blue: #4A90E2;
+      --cloud-white: #F8FAFC;
+      --sunshine-yellow: #FFD93D;
+      --warm-gold: #F5A623;
+      --soft-blue: #87CEEB;
+      --angel-white: #FFFFFF;
+      --text-dark: #2C3E50;
+      --text-grey: #5D6D7E;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(180deg, var(--soft-blue) 0%, var(--cloud-white) 100%);
+      color: var(--text-dark);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Cloud decorations */
+    .cloud {
+      position: absolute;
+      background: rgba(255,255,255,0.9);
+      border-radius: 100px;
+      opacity: 0.8;
+    }
+
+    .cloud::before {
+      content: '';
+      position: absolute;
+      background: rgba(255,255,255,0.9);
+      border-radius: 100px;
+    }
+
+    .cloud1 {
+      width: 100px;
+      height: 40px;
+      top: 20%;
+      left: 5%;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .cloud1::before {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      left: 10px;
+    }
+
+    .cloud2 {
+      width: 80px;
+      height: 35px;
+      top: 40%;
+      right: 10%;
+      animation: float 25s infinite ease-in-out reverse;
+    }
+
+    .cloud2::before {
+      width: 60px;
+      height: 40px;
+      top: -20px;
+      right: 15px;
+    }
+
+    .cloud3 {
+      width: 120px;
+      height: 45px;
+      top: 60%;
+      left: 15%;
+      animation: float 30s infinite ease-in-out;
+    }
+
+    .cloud3::before {
+      width: 70px;
+      height: 55px;
+      top: -30px;
+      left: 25px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      25% { transform: translateX(20px) translateY(-10px); }
+      50% { transform: translateX(-10px) translateY(5px); }
+      75% { transform: translateX(15px) translateY(-5px); }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(74,144,226,0.1);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-logo-icon {
+      font-size: 2.5rem;
+    }
+
+    .nav-logo-text {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--sky-blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--sky-blue);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--sunshine-yellow), var(--warm-gold));
+      color: var(--text-dark);
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255,217,61,0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 40px 80px;
+      background: linear-gradient(180deg, rgba(135,206,235,0.3) 0%, rgba(248,250,252,0.8) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--sunshine-yellow), var(--warm-gold));
+      color: var(--text-dark);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge .stars {
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .hero-content h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--sky-blue);
+    }
+
+    .hero-tagline {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.5rem;
+      color: var(--warm-gold);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-grey);
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .feature-tag {
+      background: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .hero-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sky-blue), var(--soft-blue));
+      color: white;
+      padding: 16px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 5px 20px rgba(74,144,226,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(74,144,226,0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--sky-blue);
+      padding: 16px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 2px solid var(--sky-blue);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--sky-blue);
+      color: white;
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, rgba(255,217,61,0.2), rgba(135,206,235,0.2));
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border: 3px dashed var(--sky-blue);
+    }
+
+    .hero-image-placeholder span {
+      font-size: 1rem;
+      color: var(--text-grey);
+      margin-top: 10px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 100px 40px;
+      position: relative;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: var(--sky-blue);
+    }
+
+    .section-header p {
+      color: var(--text-grey);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Programs Section */
+    #programs {
+      background: var(--cloud-white);
+    }
+
+    .age-range-banner {
+      background: linear-gradient(135deg, var(--sunshine-yellow), var(--warm-gold));
+      color: var(--text-dark);
+      padding: 20px 40px;
+      border-radius: 50px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      box-shadow: 0 5px 20px rgba(255,217,61,0.3);
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 25px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      border-top: 5px solid var(--sky-blue);
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .program-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, rgba(74,144,226,0.1), rgba(135,206,235,0.2));
+    }
+
+    .program-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--sky-blue);
+    }
+
+    .program-card p {
+      color: var(--text-grey);
+      font-size: 0.95rem;
+    }
+
+    /* Features Section */
+    #features {
+      background: linear-gradient(180deg, var(--cloud-white) 0%, rgba(255,217,61,0.1) 100%);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--sunshine-yellow), var(--warm-gold));
+    }
+
+    .feature-content h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .feature-content p {
+      color: var(--text-grey);
+      font-size: 0.9rem;
+    }
+
+    /* Transportation Section */
+    #transportation {
+      background: linear-gradient(135deg, rgba(74,144,226,0.1) 0%, rgba(255,217,61,0.1) 100%);
+      text-align: center;
+    }
+
+    .transportation-card {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border: 3px solid var(--sunshine-yellow);
+    }
+
+    .transport-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .transportation-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--sky-blue);
+    }
+
+    .transportation-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--warm-gold);
+      margin-bottom: 15px;
+    }
+
+    .transportation-card p {
+      color: var(--text-grey);
+      margin-bottom: 25px;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: var(--cloud-white);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--sky-blue);
+    }
+
+    .location-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--sky-blue);
+    }
+
+    .location-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    .location-card p {
+      color: var(--text-grey);
+    }
+
+    .hours-box {
+      background: linear-gradient(135deg, var(--sky-blue), var(--soft-blue));
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hours-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+
+    .hours-box .hours {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    }
+
+    .contact-item .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, var(--sunshine-yellow), var(--warm-gold));
+    }
+
+    .contact-item h4 {
+      font-size: 0.8rem;
+      color: var(--text-grey);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .contact-item p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+
+    .contact-cta {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-cta-icon {
+      font-size: 5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-cta h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--sky-blue);
+    }
+
+    .contact-cta .limited-spots {
+      color: var(--warm-gold);
+      font-weight: 700;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .social-link {
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      background: var(--cloud-white);
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background: var(--sky-blue);
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--sky-blue);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p {
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 968px) {
+      .cloud {
+        display: none;
+      }
+
+      .hero-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-features {
+        justify-content: center;
+      }
+
+      .hero-contact {
+        align-items: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 15px 20px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .hero {
+        padding: 100px 20px 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .programs-grid,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .transportation-card {
+        padding: 30px 20px;
+      }
+
+      .contact-cta {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cloud Decorations -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-logo">
+      <span class="nav-logo-icon">😇</span>
+      <span class="nav-logo-text">Heavens Angels Childcare</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#transportation">Transportation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:2152472182" class="nav-cta">📞 Enroll Now</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="stars">⭐⭐⭐⭐</span> STAR 4 Early Learning Center
+        </div>
+        <h1>Heavens Angels Childcare</h1>
+        <p class="hero-tagline">Where Little Angels Learn, Grow & Shine</p>
+        <p>Helping kids grow in love, learning & laughter. Licensed childcare for infants through school age in a safe, nurturing environment.</p>
+
+        <div class="hero-features">
+          <span class="feature-tag">🎓 FREE PHLprek</span>
+          <span class="feature-tag">🚌 Free Transportation</span>
+          <span class="feature-tag">👶 6 Weeks – 13 Years</span>
+          <span class="feature-tag">🕕 6 AM – 6 PM</span>
+        </div>
+
+        <div class="hero-contact">
+          <div class="hero-contact-item">
+            <span>📍</span> 4677 Frankford Ave & 1613 Wadsworth Ave, Philadelphia
+          </div>
+          <div class="hero-contact-item">
+            <span>📞</span> 215-247-2182
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="tel:2152472182" class="btn-primary">📞 Call to Enroll</a>
+          <a href="https://instagram.com/heavens_angels_childcare_" target="_blank" class="btn-secondary">📸 Follow Us</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          👼
+          <span>[Photo Gallery]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section id="programs">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Our Programs</h2>
+        <p>Quality childcare programs designed to support children through every stage of development.</p>
+      </div>
+
+      <div class="age-range-banner">
+        👶 Serving Children 6 Weeks – 13 Years Old 🎒
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-icon">👶</div>
+          <h3>Infant Care</h3>
+          <p>Nurturing care for babies starting at 6 weeks. Safe, loving environment with attentive staff.</p>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon">🧒</div>
+          <h3>Toddler Program</h3>
+          <p>Active learning through play. Building motor skills, language, and social development.</p>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon">🎒</div>
+          <h3>Preschool / Pre-K</h3>
+          <p>FREE PHLprek available! School readiness through structured curriculum and creative play.</p>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon">📚</div>
+          <h3>School Age Care</h3>
+          <p>Before & after school care with homework help, activities, and safe transportation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Why Choose Heavens Angels?</h2>
+        <p>We provide more than childcare — we create a foundation for lifelong learning.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <div class="feature-content">
+            <h3>STAR 4 Rated Center</h3>
+            <p>Pennsylvania's highest quality rating. Excellence in early childhood education.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <div class="feature-content">
+            <h3>FREE PHLprek Program</h3>
+            <p>Quality pre-kindergarten at no cost to qualifying Philadelphia families.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚌</div>
+          <div class="feature-content">
+            <h3>Free Door-to-Door Transportation</h3>
+            <p>Safe, reliable pickup and drop-off for families outside our service area.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-content">
+            <h3>Structured Curriculum</h3>
+            <p>Age-appropriate lesson plans that build skills progressively.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <div class="feature-content">
+            <h3>Learning Through Play</h3>
+            <p>Creative activities that make learning fun and engaging.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <div class="feature-content">
+            <h3>Safe, Nurturing Classrooms</h3>
+            <p>Secure environments designed for each age group's needs.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <div class="feature-content">
+            <h3>Daily Parent Communication</h3>
+            <p>Stay connected with updates on your child's day and progress.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">❤️</div>
+          <div class="feature-content">
+            <h3>Loving, Experienced Staff</h3>
+            <p>Dedicated caregivers who treat every child like family.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transportation Section -->
+  <section id="transportation">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Free Transportation</h2>
+        <p>We make childcare accessible for busy families.</p>
+      </div>
+
+      <div class="transportation-card">
+        <div class="transport-icon">🚌</div>
+        <h3>FREE Door-to-Door Transportation</h3>
+        <div class="price">$0</div>
+        <p>Available for new families outside our immediate service area. Safe, reliable transportation with licensed drivers. Pickup and drop-off right at your door.</p>
+        <a href="tel:2152472182" class="btn-primary">📞 Ask About Transportation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Visit Us</h2>
+
+          <div class="location-card">
+            <h3>📍 Location 1</h3>
+            <p>4677 Frankford Avenue<br>Philadelphia, PA</p>
+          </div>
+
+          <div class="location-card">
+            <h3>📍 Location 2</h3>
+            <p>1613 Wadsworth Avenue<br>Philadelphia, PA</p>
+          </div>
+
+          <div class="hours-box">
+            <h3>🕕 Hours of Operation</h3>
+            <div class="hours">Monday – Friday<br>6:00 AM – 6:00 PM</div>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p>215-247-2182</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">📱</div>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>Available for quick questions</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>info@heavensangelschildcare.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <div class="contact-cta-icon">👼</div>
+          <h3>Ready to Enroll Your Little Angel?</h3>
+          <p class="limited-spots">⭐ STAR 4 Center | FREE PHLprek | Limited Spots Available</p>
+          <a href="tel:2152472182" class="btn-primary">📞 Call 215-247-2182</a>
+
+          <div class="social-links">
+            <a href="https://instagram.com/heavens_angels_childcare_" target="_blank" class="social-link">📸 Instagram</a>
+            <a href="https://facebook.com/HeavensAngelsChildcareDevelopmentCenter" target="_blank" class="social-link">📘 Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Heavens Angels Childcare. STAR 4 Early Learning Center | PHL-PreK Provider. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
